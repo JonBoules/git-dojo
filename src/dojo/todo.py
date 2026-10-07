@@ -33,6 +33,11 @@ class TodoList:
     def list_tasks(self) -> list[Task]:
         return list(self._tasks)
 
+    def clear_completed(self) -> int:
+        remaining = [task for task in self._tasks if not task.done]
+        removed = len(self._tasks) - len(remaining)
+        self._tasks = remaining
+        return removed
 
 def format_task(task: Task) -> str:
     return f"{task.id}. {task.title}"
