@@ -29,3 +29,16 @@ def test_list_tasks_returns_copy():
 def test_format_task():
     task = TodoList().add_task("Buy milk")
     assert format_task(task) == "1. Buy milk"
+
+def test_add_task_default_priority_is_normal():
+    assert TodoList().add_task("Buy milk").priority == "normal"
+
+
+def test_add_task_accepts_explicit_priority():
+    assert TodoList().add_task("Buy milk", priority="high").priority == "high"
+
+
+def test_add_task_rejects_invalid_priority():
+    with pytest.raises(ValueError):
+        TodoList().add_task("Buy milk", priority="urgent")
+        
