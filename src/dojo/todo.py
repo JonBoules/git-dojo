@@ -8,7 +8,6 @@ class Task:
     id: int
     title: str
     done: bool = False
-    priority: str = "high"
     priority: str = "normal"
 
 PRIORITIES = ("low", "normal", "high")
