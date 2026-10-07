@@ -28,7 +28,14 @@ def test_list_tasks_returns_copy():
 
 def test_format_task():
     task = TodoList().add_task("Buy milk")
-    assert format_task(task) == "1. Buy milk"
+    assert format_task(task) == "[ ] 1. Buy milk"
+
+
+def test_format_task_when_done():
+    todo = TodoList()
+    task = todo.add_task("Buy milk")
+    todo.complete_task(0)
+    assert format_task(task) == "[x] 1. Buy milk"
 
 def test_add_task_default_priority_is_normal():
     assert TodoList().add_task("Buy milk").priority == "normal"
