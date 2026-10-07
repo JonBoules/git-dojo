@@ -35,7 +35,7 @@ class TodoList:
 
     def clear_completed(self) -> int:
         remaining = [task for task in self._tasks if not task.done]
-        removed = len(self._tasks) - len(remaining) '''test'''
+        removed = len(self._tasks) - len(remaining)
         self._tasks = remaining
         return removed
 
