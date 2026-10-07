@@ -8,6 +8,7 @@ class Task:
     id: int
     title: str
     done: bool = False
+    priority: str = "normal"
 
 
 class TodoList:
