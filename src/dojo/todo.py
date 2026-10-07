@@ -40,4 +40,5 @@ class TodoList:
         return removed
 
 def format_task(task: Task) -> str:
-    return f"{task.id}. {task.title}"
+    checkbox = "x" if task.done else " "
+    return f"[{checkbox}] {task.id}. {task.title}"
